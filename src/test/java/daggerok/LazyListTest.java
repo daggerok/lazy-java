@@ -1,15 +1,20 @@
 package daggerok;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.Rule;
+import org.junit.jupiter.api.*;
 
+import java.io.ByteArrayOutputStream;
 import java.util.List;
+import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.stream.IntStream;
 
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
+@CaptureSystemOutput
 class LazyListTest {
 
   @Test
@@ -27,5 +32,54 @@ class LazyListTest {
 
     final int third = prime.apply(numbers).tail().tail().head();
     assertEquals(5, third);
+  }
+
+  @Test @DisplayName("iterate over all")
+  void iterateOver(CaptureSystemOutput.OutputCapture log) {
+    log.expect(containsString("1: 2"));
+    log.expect(containsString("2: 3"));
+    log.expect(containsString("3: 5"));
+    HeadTailLazyListImpl.printAllByIteration(10);
+    assertTrue(log.toString().contains("4: 7"));
+    ////this will fail, just uncomment to check
+    //assertTrue(log.toString().contains("5: 9"));
+    assertTrue(log.toString().contains("5: 11"));
+  }
+
+  @BeforeEach
+  void beforeEach(CaptureSystemOutput.OutputCapture outputCapture) {
+    assertFalse(outputCapture.toString().contains("@BeforeEach"));
+    System.out.println("@BeforeEach");
+    assertTrue(outputCapture.toString().contains("@BeforeEach"));
+  }
+
+  @AfterEach
+  void afterEach(CaptureSystemOutput.OutputCapture outputCapture) {
+    System.out.println("@AfterEach");
+    outputCapture.expect(containsString("@BeforeEach"));
+    outputCapture.expect(containsString("@AfterEach"));
+  }
+
+  @Test
+  void systemOut(CaptureSystemOutput.OutputCapture outputCapture) {
+    outputCapture.expect(containsString("SYS_OUT #1"));
+    System.out.println("Printed to SYS_OUT #1");
+    // The following would cause the test to fail after the
+    // test method completes.
+    // outputCapture.expect(containsString("Foo!"));
+  }
+
+  @Test
+  void systemErr(CaptureSystemOutput.OutputCapture outputCapture) {
+    outputCapture.expect(containsString("SYS_ERR #2"));
+    System.err.println("Printed to SYS_ERR #2");
+  }
+
+  @Test
+  void systemOutAndSystemErr(CaptureSystemOutput.OutputCapture outputCapture) {
+    outputCapture.expect(containsString("SYS_OUT #3"));
+    outputCapture.expect(containsString("SYS_ERR #3"));
+    System.out.println("Printed to SYS_OUT #3");
+    System.err.println("Printed to SYS_ERR #3");
   }
 }

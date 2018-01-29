@@ -2,10 +2,14 @@ package daggerok;
 
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
+import lombok.experimental.var;
+import lombok.extern.slf4j.Slf4j;
 
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
+@Slf4j
 @ToString
 @RequiredArgsConstructor
 public class HeadTailLazyListImpl<T> implements LazyList<T> {
@@ -46,5 +50,14 @@ public class HeadTailLazyListImpl<T> implements LazyList<T> {
     return new HeadTailLazyListImpl<>(numbers.head(),
                                       () -> primeNumbers(numbers.tail()
                                                                 .filter(i -> i % numbers.head() != 0)));
+  }
+
+  public static void printAllByIteration(final int amount) {
+
+    var copy = primeNumbers(from(2));
+
+    for (int i = 1; /* !copy.isEmpty() && */ i <= amount; i++, copy = copy.tail()) {
+      log.info("{}: {}", i, copy.head());
+    }
   }
 }
