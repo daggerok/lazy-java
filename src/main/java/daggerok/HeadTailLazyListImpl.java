@@ -5,7 +5,6 @@ import lombok.ToString;
 import lombok.experimental.var;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
@@ -59,5 +58,12 @@ public class HeadTailLazyListImpl<T> implements LazyList<T> {
     for (int i = 1; /* !copy.isEmpty() && */ i <= amount; i++, copy = copy.tail()) {
       log.info("{}: {}", i, copy.head());
     }
+  }
+
+  public static void reversePrintByRecursion(final LazyList<Integer> list, final int i) {
+
+    if (/* list.isEmpty() || */ i < 1) return;
+    log.info("{}: {}", i, list.head());
+    reversePrintByRecursion(list.tail(), i - 1);
   }
 }

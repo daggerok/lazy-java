@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package daggerok;
+package daggerok.extensions;
 
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.ElementType.TYPE;
