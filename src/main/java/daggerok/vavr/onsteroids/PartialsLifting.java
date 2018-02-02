@@ -3,9 +3,9 @@ package daggerok.vavr.onsteroids;
 import io.vavr.Function2;
 import io.vavr.control.Option;
 
-public class PartialsLiftingAndMemoization {
+public class PartialsLifting {
 
-  private PartialsLiftingAndMemoization() {}
+  private PartialsLifting() {}
 
   public static final Function2<Integer, Integer, Integer>
       div = (a, b) -> a / b;

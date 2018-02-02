@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 
 import java.util.NoSuchElementException;
 
-import static daggerok.vavr.onsteroids.PartialsLiftingAndMemoization.lift;
+import static daggerok.vavr.onsteroids.PartialsLifting.lift;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("partial functions, lift (lifting) and memoization")
-class PartialsLiftingAndMemoizationTest {
+class PartialsLiftingTest {
 
   @Test
   void test() {
