@@ -1,5 +1,7 @@
 = lazy-java image:https://travis-ci.org/daggerok/lazy-java.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/lazy-java"]
 
+That repo contains some vavr (javaslang) examples
+
 links:
 
 . link:http://www.vavr.io/vavr-docs/#_stream[vavr.io reference]
