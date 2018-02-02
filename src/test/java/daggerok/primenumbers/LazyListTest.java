@@ -1,6 +1,8 @@
-package daggerok.primenumbers.lazy;
+package daggerok.primenumbers;
 
 import daggerok.extensions.CaptureSystemOutput;
+import daggerok.primenumbers.HeadTailLazyListImpl;
+import daggerok.primenumbers.LazyList;
 import lombok.extern.slf4j.Slf4j;
 import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.*;

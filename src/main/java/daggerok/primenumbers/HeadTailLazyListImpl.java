@@ -1,4 +1,4 @@
-package daggerok.primenumbers.lazy;
+package daggerok.primenumbers;
 
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;

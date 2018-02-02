@@ -1,4 +1,4 @@
-package daggerok.primenumbers.lazy;
+package daggerok.primenumbers;
 
 import java.util.function.Predicate;
 
