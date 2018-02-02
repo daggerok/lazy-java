@@ -1,4 +1,4 @@
-package daggerok;
+package daggerok.lazy;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
