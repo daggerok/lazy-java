@@ -2,6 +2,7 @@
 
 links:
 
+. link:https://www.youtube.com/watch?v=gRJmpmYMHE0[Javaslang - Functional Java Done Right by Grzegorz Piwowarek]
 . link:https://www.youtube.com/watch?v=84MfG4tp30s[Lazy Java by Mario Fusco]
 . link:https://www.youtube.com/watch?v=Rmer37g9AZM[Functional GOF patterns by Mario Fusco]
 . link:https://www.youtube.com/watch?v=K6BmGBzIqW0[From object oriented to functional domain modeling by Mario Fusco]

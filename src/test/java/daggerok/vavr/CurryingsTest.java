@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CurryingsTest {
 
   @Test
+  @DisplayName("test cache")
   void test() {
 
     final Function1<Integer, Integer> add2 = curried.apply(2);
