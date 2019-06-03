@@ -11,3 +11,10 @@ links:
 - link:https://www.youtube.com/watch?v=K6BmGBzIqW0[From object oriented to functional domain modeling by Mario Fusco]
 - link:https://www.youtube.com/watch?v=e4MT_OguDKg[Design Patterns in the Light of Lambda Expressions by Subramaniam]
 - link:https://www.youtube.com/watch?v=fnMOmgELlsw[Twins: FP and OOP]
+
+group:
+
+- link:https://github.com/daggerok/lazy-java[lazy-java]
+- link:https://github.com/daggerok/java-examples[java-examples]
+- link:https://github.com/daggerok/learn-jvm[learn-jvm]
+- link:https://github.com/daggerok/fold-java[fold-java]
